@@ -8,12 +8,12 @@
         <h3>分帳</h3>
         <div>
             <label>輸入人名：<input type="text" id="name"></label>
+            <button onclick="addPerson()">新增</button>
             <ul id="people">
             </ul>
-            <div id="list">
-                <label>付款人：<select id="payer-name"></select></label>
-                <label>金額：<input type="number" id="amount"></label>
-            </div>
+            <label>付款人：<select id="payer-name"></select></label>
+            <label>金額：<input type="number" id="amount"></label>
+            <button onclick="addRecord()">新增</button>
             <ul id="records">
             </ul>
             <p>結果：</p>
