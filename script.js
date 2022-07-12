@@ -5,12 +5,16 @@ function onEnter(callback) {
     return (ev) => {
         if (ev.key === "Enter") {
             callback();
+            settlement()
         }
     }
 }
 
 function addPerson() {
     elem = document.getElementById("name")
+    if (elem.value in people) {
+        return
+    }
     people[elem.value] = 0
     console.log(elem.value)
     li = document.createElement("li")
@@ -22,7 +26,6 @@ function addPerson() {
     option.innerText = elem.value
     document.getElementById("payer-name").appendChild(option)
     elem.value = ""
-    settlement()
 }
 
 function addRecord() {
@@ -39,7 +42,6 @@ function addRecord() {
 
     amountElem.value = ""
     console.log(people)
-    settlement()
 }
 
 function removeAllChildNodes(parent) {
